@@ -1,14 +1,10 @@
-#password = 123456
-#use openssl passwd -1 to generate
-
-
 class vsftpd::user{
-  user{'ftp_test':
+  user{'ftp_jaymz':
      ensure	=> present,
      uid 	=> '504',
-     home	=> '/home/ftp_test',
+     home	=> '/home/ftp_jaymz',
      shell 	=> '/sbin/nologin',
-     password	=> '$1$5I6CVGmw$gLVd4eUeq03/KqPCqJHUK0',
+     password	=> '$1$svfAKdBu$c8MnfTtA.NnyVb/jhPTR3/',
      gid	=> 'ftp',
 
 
