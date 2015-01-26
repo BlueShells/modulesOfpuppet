@@ -34,10 +34,10 @@ class vsftpd {
            content1     => "hi jaymz",
    }
 
-  # include ::vsftpd::test
-  # ::vsftd::test{'jaymz_test':
-  #	   content	=>"hi jaymz_test",
-  # }
+   #include ::vsftpd::test
+   vsftpd::test{'jaymz_test':
+  	   content3	=>"hi jaymz_test",
+   }
   #include vsftpd::vhost
   vsftpd::vhost{'abc':
 	port	=> "100",
