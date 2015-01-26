@@ -1,0 +1,10 @@
+server {
+   listen $port;
+   server_name_;
+
+   location /nginx_stagus{
+     stub_status on;
+     access_log off;
+   }
+
+}

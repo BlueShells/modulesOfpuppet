@@ -11,13 +11,13 @@ class vsftpd {
    file {'vsftpd.conf':
       path 	=> '/etc/vsftpd/vsftpd.conf',
       require	=> Package["vsftpd"],
-      source 	=> "puppet://broker.jaymz.com/modules/vsftpd/vsftpd.conf"
+      source 	=> "puppet://puppet.jaymz.com/modules/vsftpd/vsftpd.conf"
    }
    include ::vsftpd::user
    include ::vsftpd::file
    
    define vsftpd::createfile($name1=$title,$content1){
-      file{"/tmp/$name.txt":
+      file{"/tmp/$name1.txt":
           ensure => file,
           content => $content1,
           mode    => 0644,
@@ -34,5 +34,14 @@ class vsftpd {
            content1     => "hi jaymz",
    }
 
+  # include ::vsftpd::test
+  # ::vsftd::test{'jaymz_test':
+  #	   content	=>"hi jaymz_test",
+  # }
+  #include vsftpd::vhost
+  vsftpd::vhost{'abc':
+	port	=> "100",
+
+  }
 
 }
